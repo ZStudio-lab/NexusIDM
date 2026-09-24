@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NexusIDM - Professional Download Accelerator | Zerith Studio</title>
+    <!-- Ultra-Crisp Vector SVG Favicon Matching the 3D Squircle "O" Specification -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><defs><linearGradient id='highlight' x1='0%' y1='0%' x2='100%' y2='100%'><stop offset='0%' stop-color='%2360a5fa'/><stop offset='50%' stop-color='%233b82f6'/><stop offset='100%' stop-color='%231d4ed8'/></linearGradient><linearGradient id='shadow' x1='0%' y1='0%' x2='100%' y2='100%'><stop offset='0%' stop-color='%231e3a8a'/><stop offset='50%' stop-color='%23172554'/><stop offset='100%' stop-color='%23090a0f'/></linearGradient><filter id='depth' x='-10%' y='-10%' width='120%' height='120%'><feDropShadow dx='0' dy='4' stdDeviation='4' flood-color='%23000000' flood-opacity='0.4'/></filter></defs><rect x='8' y='8' width='84' height='84' rx='26' fill='none' stroke='url(%23shadow)' stroke-width='16' filter='url(%23depth)'/><rect x='8' y='8' width='84' height='84' rx='26' fill='none' stroke='url(%23highlight)' stroke-width='16' stroke-dasharray='132 300'/></svg>">
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome Professional Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .glass-panel {
+            background: rgba(20, 22, 34, 0.7);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+        }
+        .glass-card {
+            background: rgba(24, 26, 38, 0.5);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .glass-card:hover {
+            transform: translateY(-4px);
+            border-color: rgba(59, 130, 246, 0.4);
+            box-shadow: 0 12px 40px -10px rgba(59, 130, 246, 0.2);
+        }
+        .glow-orb {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(120px);
+            z-index: -1;
+            opacity: 0.3;
+            pointer-events: none;
+        }
+    </style>
+</head>
+<body class="bg-[#090a0f] text-gray-100 font-sans antialiased selection:bg-blue-500 selection:text-white relative overflow-x-hidden min-h-screen flex flex-col">
+
+    <!-- Background Ambient Liquid Glow Orbs -->
+    <div class="glow-orb w-[500px] h-[500px] bg-blue-600 top-[-10%] left-[-10%] animate-pulse"></div>
+    <div class="glow-orb w-[600px] h-[600px] bg-indigo-600 top-[30%] right-[-15%]"></div>
+    <div class="glow-orb w-[400px] h-[400px] bg-cyan-600 bottom-[10%] left-[20%]"></div>
+
+    <!-- Header / Liquid Glass Navbar -->
+    <header class="glass-panel sticky top-0 z-50 border-b border-white/10">
+        <div class="max-w-6xl mx-auto px-6 h-20 flex items-center justify-between">
+            <!-- Logo Branding (Redesigned Vector 3D Squircle "O" Icon) -->
+            <div onclick="switchTab('home')" class="flex items-center space-x-3.5 group cursor-pointer">
+                <div class="relative w-11 h-11 flex items-center justify-center shrink-0 drop-shadow-lg">
+                    <svg class="w-full h-full" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <defs>
+                            <linearGradient id="navHighlight" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" stop-color="#60a5fa"/>
+                                <stop offset="50%" stop-color="#3b82f6"/>
+                                <stop offset="100%" stop-color="#1d4ed8"/>
+                            </linearGradient>
+                            <linearGradient id="navShadow" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" stop-color="#1e3a8a"/>
+                                <stop offset="50%" stop-color="#172554"/>
+                                <stop offset="100%" stop-color="#090a0f"/>
+                            </linearGradient>
+                            <filter id="navDepth" x="-20%" y="-20%" width="140%" height="140%">
+                                <feDropShadow dx="0" dy="3" stdDeviation="3" flood-color="#000000" flood-opacity="0.5"/>
+                            </filter>
+                        </defs>
+                        <!-- Base Shadow Frame (Right/Bottom) -->
+                        <rect x="8" y="8" width="84" height="84" rx="26" fill="none" stroke="url(#navShadow)" stroke-width="16" filter="url(#navDepth)"/>
+                        <!-- Highlight Frame (Top/Left) -->
+                        <rect x="8" y="8" width="84" height="84" rx="26" fill="none" stroke="url(#navHighlight)" stroke-width="16" stroke-dasharray="132 300"/>
+                    </svg>
+                </div>
+                <div class="flex flex-col">
+                    <div class="text-xl font-extrabold tracking-tight leading-none text-white">
+                        Nexus<span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-indigo-400">IDM</span>
+                    </div>
+                    <span class="text-[11px] uppercase tracking-[0.2em] text-gray-400 font-bold mt-1">Zerith Studio</span>
+                </div>
+            </div>
+            
+            <!-- Navigation Tabs -->
+            <nav class="hidden md:flex items-center space-x-1 bg-black/20 p-1.5 rounded-2xl border border-white/5">
+                <button onclick="switchTab('home')" id="nav-home" class="px-4 py-2 rounded-xl text-sm font-semibold transition-all duration-300 bg-blue-600 text-white shadow-lg shadow-blue-600/30 flex items-center space-x-2">
+                    <i class="fa-solid fa-house"></i><span>Home</span>
+                </button>
+                <button onclick="switchTab('support')" id="nav-support" class="px-4 py-2 rounded-xl text-sm font-semibold text-gray-300 hover:text-white hover:bg-white/5 transition-all duration-300 flex items-center space-x-2">
+                    <i class="fa-solid fa-headset"></i><span>Support</span>
+                </button>
+                <button onclick="switchTab('copyright')" id="nav-copyright" class="px-4 py-2 rounded-xl text-sm font-semibold text-gray-300 hover:text-white hover:bg-white/5 transition-all duration-300 flex items-center space-x-2">
+                    <i class="fa-solid fa-shield-halved"></i><span>Copyright</span>
+                </button>
+                <button onclick="switchTab('license')" id="nav-license" class="px-4 py-2 rounded-xl text-sm font-semibold text-gray-300 hover:text-white hover:bg-white/5 transition-all duration-300 flex items-center space-x-2">
+                    <i class="fa-solid fa-file-contract"></i><span>License</span>
+                </button>
+            </nav>
+
+            <div>
+                <a href="#download" onclick="switchTab('home')" class="relative group overflow-hidden rounded-xl p-[1px]">
+                    <span class="absolute inset-0 bg-gradient-to-r from-blue-500 to-indigo-500 transition-all duration-300 group-hover:opacity-90"></span>
+                    <span class="relative px-5 py-2.5 bg-[#0f111a] rounded-[11px] flex items-center justify-center text-sm font-semibold text-white transition-all duration-300 group-hover:bg-opacity-0 space-x-2">
+                        <i class="fa-solid fa-download"></i><span>Get App</span>
+                    </span>
+                </a>
+            </div>
+        </div>
+        <!-- Mobile Navigation Row -->
+        <div class="flex md:hidden items-center justify-around px-4 py-3 border-t border-white/5 bg-[#0f111a]/90">
+            <button onclick="switchTab('home')" id="mob-nav-home" class="text-xs font-bold text-blue-400 flex flex-col items-center space-y-1"><i class="fa-solid fa-house"></i><span>Home</span></button>
+            <button onclick="switchTab('support')" id="mob-nav-support" class="text-xs font-semibold text-gray-400 flex flex-col items-center space-y-1"><i class="fa-solid fa-headset"></i><span>Support</span></button>
+            <button onclick="switchTab('copyright')" id="mob-nav-copyright" class="text-xs font-semibold text-gray-400 flex flex-col items-center space-y-1"><i class="fa-solid fa-shield-halved"></i><span>Copyright</span></button>
+            <button onclick="switchTab('license')" id="mob-nav-license" class="text-xs font-semibold text-gray-400 flex flex-col items-center space-y-1"><i class="fa-solid fa-file-contract"></i><span>License</span></button>
+        </div>
+    </header>
+
+    <!-- Main Content Container -->
+    <main class="flex-grow">
+
+        <!-- TAB 1: HOME -->
+        <div id="tab-home" class="tab-content">
+            <!-- Hero Section -->
+            <section class="py-20 px-6 text-center max-w-5xl mx-auto relative">
+                <div class="inline-flex items-center space-x-2.5 mb-6 px-4 py-1.5 glass-panel rounded-full text-blue-400 text-xs font-semibold uppercase tracking-wider border border-blue-500/30 shadow-inner">
+                    <i class="fa-solid fa-circle-check text-[10px]"></i>
+                    <span>Developed by Zerith Studio Official</span>
+                </div>
+                <h1 class="text-5xl md:text-7xl font-extrabold tracking-tight mb-8 text-white leading-tight">
+                    Supercharge Your Downloads <br class="hidden sm:inline">with <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-indigo-300 to-purple-400">NexusIDM</span>
+                </h1>
+                <p class="text-lg md:text-xl text-gray-300 mb-12 max-w-2xl mx-auto font-normal leading-relaxed">
+                    Experience maximum network bandwidth utilization with 32 parallel socket streams, liquid glass feedback telemetry, and high-performance background processing.
+                </p>
+                <div id="download" class="flex flex-col sm:flex-row justify-center items-center gap-4">
+                    <a href="NexusIDM.exe" download class="w-full sm:w-auto bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 text-white font-bold px-9 py-4 rounded-2xl transition-all duration-300 shadow-2xl shadow-blue-600/40 flex items-center justify-center space-x-3 transform hover:-translate-y-0.5 border border-white/20">
+                        <i class="fa-solid fa-download"></i>
+                        <span>Download for Windows (EXE)</span>
+                    </a>
+                </div>
+                <p class="text-xs text-gray-400 mt-4 tracking-wide"><i class="fa-solid fa-shield text-blue-400 mr-1"></i> Requires Windows 10 / 11 • Verified Publisher: Zerith Studio Official</p>
+            </section>
+
+            <!-- Antivirus Notice Section -->
+            <section class="max-w-4xl mx-auto px-6 mb-20">
+                <div class="glass-card rounded-3xl p-7 border-amber-500/20 bg-amber-500/[0.03] flex flex-col md:flex-row items-start md:items-center space-y-4 md:space-y-0 md:space-x-6 relative overflow-hidden">
+                    <div class="absolute top-0 right-0 w-32 h-32 bg-amber-500/5 rounded-full blur-2xl"></div>
+                    <div class="w-12 h-12 bg-amber-500/10 border border-amber-500/20 text-amber-400 rounded-2xl flex items-center justify-center text-lg shrink-0 font-bold shadow-inner">
+                        <i class="fa-solid fa-triangle-exclamation"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-base font-bold text-amber-300 mb-1">Important Note Regarding Antivirus & SmartScreen</h3>
+                        <p class="text-sm text-gray-300 leading-relaxed">
+                            Because NexusIDM uses low-level multi-threaded socket splitting and requests automatic UAC Administrator privileges on startup, Windows Defender or third-party suites may occasionally flag custom binaries as a "False Positive". 
+                            <strong class="text-white">If your antivirus blocks the application, please add an exclusion or temporarily allow the file</strong> to let the 32-stream engine operate at peak performance.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Features Grid -->
+            <section class="py-16 px-6 max-w-6xl mx-auto border-t border-white/5">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl md:text-4xl font-extrabold text-white mb-3">Designed for Speed & Power</h2>
+                    <p class="text-gray-400 text-base">Everything you need to manage your large files and multi-source downloads efficiently.</p>
+                </div>
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="glass-card p-8 rounded-3xl">
+                        <div class="w-12 h-12 bg-blue-500/10 border border-blue-500/20 text-blue-400 rounded-2xl flex items-center justify-center mb-6 font-bold shadow-inner text-lg">
+                            <i class="fa-solid fa-bolt"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-3">32 Parallel Streams</h3>
+                        <p class="text-gray-400 text-sm leading-relaxed">Slices target files into 32 simultaneous socket pipelines to completely max out your internet service provider's download bandwidth limits.</p>
+                    </div>
+                    <div class="glass-card p-8 rounded-3xl">
+                        <div class="w-12 h-12 bg-indigo-500/10 border border-indigo-500/20 text-indigo-400 rounded-2xl flex items-center justify-center mb-6 font-bold shadow-inner text-lg">
+                            <i class="fa-solid fa-user-shield"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-3">Admin Governor Mode</h3>
+                        <p class="text-gray-400 text-sm leading-relaxed">Automatically bypasses network socket constraints by cleanly elevating privileges via UAC on launch without showing command prompt boxes.</p>
+                    </div>
+                    <div class="glass-card p-8 rounded-3xl">
+                        <div class="w-12 h-12 bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 rounded-2xl flex items-center justify-center mb-6 font-bold shadow-inner text-lg">
+                            <i class="fa-solid fa-chart-line"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-3">Background Telemetry</h3>
+                        <p class="text-gray-400 text-sm leading-relaxed">Downloads execute seamlessly inside a background processing queue while you monitor active thread speed metrics and live ETAs.</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- TAB 2: SUPPORT -->
+        <div id="tab-support" class="tab-content hidden py-16 px-6 max-w-4xl mx-auto">
+            <div class="text-center mb-12">
+                <div class="inline-flex items-center space-x-2 mb-3 px-3.5 py-1 bg-blue-500/10 border border-blue-500/20 rounded-full text-blue-400 text-xs font-semibold uppercase tracking-wider">
+                    <i class="fa-solid fa-headset"></i><span>Get Assistance</span>
+                </div>
+                <h2 class="text-3xl md:text-5xl font-extrabold text-white mb-4">Support & Contact</h2>
+                <p class="text-gray-400 max-w-xl mx-auto">Need help with installation, custom configurations, or reporting bugs? Reach out to Zerith Studio Official directly.</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-6 mb-12">
+                <!-- Email Support Card -->
+                <div class="glass-card p-8 rounded-3xl flex flex-col items-center text-center">
+                    <div class="w-14 h-14 bg-blue-500/10 border border-blue-500/20 text-blue-400 rounded-2xl flex items-center justify-center mb-5 text-xl shadow-inner">
+                        <i class="fa-solid fa-envelope"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2">Direct E-mail</h3>
+                    <p class="text-sm text-gray-400 mb-6">Send your inquiries or support tickets directly to our team inbox.</p>
+                    <a href="mailto:studiozerith@gmail.com" class="mt-auto px-6 py-3 bg-blue-600/20 hover:bg-blue-600/30 border border-blue-500/30 text-blue-300 font-semibold rounded-xl text-sm transition-all duration-300 flex items-center space-x-2">
+                        <i class="fa-solid fa-paper-plane text-xs"></i><span>studiozerith@gmail.com</span>
+                    </a>
+                </div>
+
+                <!-- YouTube Channel Card -->
+                <div class="glass-card p-8 rounded-3xl flex flex-col items-center text-center">
+                    <div class="w-14 h-14 bg-red-500/10 border border-red-500/20 text-red-400 rounded-2xl flex items-center justify-center mb-5 text-xl shadow-inner">
+                        <i class="fa-brands fa-youtube"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2">YouTube Channel</h3>
+                    <p class="text-sm text-gray-400 mb-6">Watch tutorials, release updates, and troubleshooting guides.</p>
+                    <a href="https://youtube.com/@ZerithStudioOfficial" target="_blank" class="mt-auto px-6 py-3 bg-red-600/20 hover:bg-red-600/30 border border-red-500/30 text-red-300 font-semibold rounded-xl text-sm transition-all duration-300 flex items-center space-x-2">
+                        <i class="fa-solid fa-video text-xs"></i><span>@ZerithStudioOfficial</span>
+                    </a>
+                </div>
+            </div>
+
+            <div class="glass-card p-8 rounded-3xl border-blue-500/20 bg-blue-500/[0.02] text-center">
+                <h3 class="text-lg font-bold text-white mb-2"><i class="fa-solid fa-circle-question text-blue-400 mr-2"></i>Official Guidelines</h3>
+                <p class="text-sm text-gray-400">Make sure your firewall or network manager allows multi-socket spawning. For update notes, follow our official YouTube handle.</p>
+            </div>
+        </div>
+
+        <!-- TAB 3: COPYRIGHT -->
+        <div id="tab-copyright" class="tab-content hidden py-16 px-6 max-w-4xl mx-auto">
+            <div class="text-center mb-12">
+                <div class="inline-flex items-center space-x-2 mb-3 px-3.5 py-1 bg-indigo-500/10 border border-indigo-500/20 rounded-full text-indigo-400 text-xs font-semibold uppercase tracking-wider">
+                    <i class="fa-solid fa-shield-halved"></i><span>Legal Ownership</span>
+                </div>
+                <h2 class="text-3xl md:text-5xl font-extrabold text-white mb-4">Copyright Notice</h2>
+                <p class="text-gray-400">Intellectual property and ownership guidelines for NexusIDM.</p>
+            </div>
+
+            <div class="glass-card p-8 md:p-10 rounded-3xl space-y-6 text-gray-300 text-sm leading-relaxed">
+                <div class="flex items-center space-x-4 pb-6 border-b border-white/10">
+                    <div class="w-12 h-12 bg-indigo-500/10 border border-indigo-500/20 text-indigo-400 rounded-2xl flex items-center justify-center text-lg shrink-0 font-bold">
+                        <i class="fa-solid fa-copyright"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-bold text-white">2026 Zerith Studio Official</h3>
+                        <p class="text-xs text-gray-400">All rights reserved globally.</p>
+                    </div>
+                </div>
+                <p>
+                    This software application, <strong class="text-white">NexusIDM</strong>, along with its source design, custom user interface architecture, multi-threaded engine compilation logic, and branding elements, is the exclusive intellectual property of <strong class="text-white">Zerith Studio Official</strong>.
+                </p>
+                <p>
+                    Unauthorized distribution, commercial resale, modification, or reverse engineering of the compiled binary package (<code class="text-blue-400 bg-black/40 px-1.5 py-0.5 rounded">NexusIDM.exe</code>) without explicit written consent from Zerith Studio Official is strictly prohibited.
+                </p>
+                <p class="text-xs text-gray-400 pt-4 border-t border-white/5 flex items-center space-x-2">
+                    <i class="fa-solid fa-envelope text-blue-400"></i>
+                    <span>For licensing inquiries or commercial use permissions, contact us at: <a href="mailto:studiozerith@gmail.com" class="text-blue-400 underline font-medium">studiozerith@gmail.com</a></span>
+                </p>
+            </div>
+        </div>
+
+        <!-- TAB 4: LICENSE -->
+        <div id="tab-license" class="tab-content hidden py-16 px-6 max-w-4xl mx-auto">
+            <div class="text-center mb-12">
+                <div class="inline-flex items-center space-x-2 mb-3 px-3.5 py-1 bg-emerald-500/10 border border-emerald-500/20 rounded-full text-emerald-400 text-xs font-semibold uppercase tracking-wider">
+                    <i class="fa-solid fa-file-contract"></i><span>Terms & Agreement</span>
+                </div>
+                <h2 class="text-3xl md:text-5xl font-extrabold text-white mb-4">Software License Agreement</h2>
+                <p class="text-gray-400">Review the end-user terms and conditions for utilizing NexusIDM.</p>
+            </div>
+
+            <div class="glass-card p-8 md:p-10 rounded-3xl space-y-6 text-gray-300 text-sm leading-relaxed">
+                <h3 class="text-lg font-bold text-white flex items-center space-x-2"><i class="fa-solid fa-file-contract text-emerald-400"></i><span>1. Grant of License</span></h3>
+                <p>
+                    Zerith Studio Official grants you a personal, non-exclusive, non-transferable, free-to-use license to download, install, and execute NexusIDM on compatible Windows operating systems for personal use.
+                </p>
+
+                <h3 class="text-lg font-bold text-white flex items-center space-x-2"><i class="fa-solid fa-ban text-rose-400"></i><span>2. Restrictions</span></h3>
+                <p>
+                    You may not rent, lease, sublicense, parse, modify, patch, or reverse engineer the compiled executable binary file. Any attempt to alter the security and network thread limitations is a direct violation of this agreement.
+                </p>
+
+                <h3 class="text-lg font-bold text-white flex items-center space-x-2"><i class="fa-solid fa-triangle-exclamation text-amber-400"></i><span>3. Disclaimer of Warranty</span></h3>
+                <p>
+                    The software is provided "AS IS", without warranty of any kind, express or implied, including but not limited to the warranties of merchantability, fitness for a particular purpose, and non-infringement. In no event shall Zerith Studio Official be liable for any claims, damages, or liabilities arising from the use of this software.
+                </p>
+
+                <div class="pt-4 border-t border-white/5 flex flex-col sm:flex-row items-center justify-between text-xs text-gray-400 gap-2">
+                    <span>Publisher: Zerith Studio Official</span>
+                    <span class="text-emerald-400 font-semibold flex items-center space-x-1"><i class="fa-solid fa-circle-check"></i><span>Active & Verified License Policy</span></span>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t border-white/5 py-8 text-center text-gray-500 text-sm glass-panel mt-16 flex flex-col items-center justify-center space-y-2">
+        <div class="flex items-center space-x-4">
+            <a href="https://youtube.com/@ZerithStudioOfficial" target="_blank" class="text-gray-400 hover:text-red-400 transition-colors"><i class="fa-brands fa-youtube text-lg"></i></a>
+            <a href="mailto:studiozerith@gmail.com" class="text-gray-400 hover:text-blue-400 transition-colors"><i class="fa-solid fa-envelope text-lg"></i></a>
+        </div>
+        <p>&copy; 2026 Zerith Studio Official (@ZerithStudioOfficial). All rights reserved.</p>
+    </footer>
+
+    <!-- Interactive Scripts -->
+    <script>
+        function switchTab(tabId) {
+            // Hide all tab contents
+            const tabs = document.querySelectorAll('.tab-content');
+            tabs.forEach(tab => tab.classList.add('hidden'));
+
+            // Show selected tab
+            document.getElementById('tab-' + tabId).classList.remove('hidden');
+
+            // Update Desktop Nav styles
+            const navButtons = ['home', 'support', 'copyright', 'license'];
+            navButtons.forEach(btn => {
+                const el = document.getElementById('nav-' + btn);
+                if (btn === tabId) {
+                    el.className = "px-4 py-2 rounded-xl text-sm font-semibold transition-all duration-300 bg-blue-600 text-white shadow-lg shadow-blue-600/30 flex items-center space-x-2";
+                } else {
+                    el.className = "px-4 py-2 rounded-xl text-sm font-semibold text-gray-300 hover:text-white hover:bg-white/5 transition-all duration-300 flex items-center space-x-2";
+                }
+            });
+
+            // Update Mobile Nav styles
+            navButtons.forEach(btn => {
+                const mobEl = document.getElementById('mob-nav-' + btn);
+                if (mobEl) {
+                    if (btn === tabId) {
+                        mobEl.className = "text-xs font-bold text-blue-400 flex flex-col items-center space-y-1";
+                    } else {
+                        mobEl.className = "text-xs font-semibold text-gray-400 flex flex-col items-center space-y-1";
+                    }
+                }
+            });
+
+            // Scroll to top smoothly on switch
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+    </script>
+
+</body>
+</html>
